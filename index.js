@@ -6,25 +6,12 @@ const os = require('os');
 const fs = require('fs');
 const path = require('path');
 const exec = require('child_process').exec;
- 
+const pExec = require('./util.js').pExec;
+
 const co = require('co');
 
 function isWin() {
   return os.platform() === 'win32';
-}
-
-function pExec(command) {
-  return new Promise(resolve => {
-    const process = exec(command);
-    let res = [];
-    process.stdout.setEncoding('utf-8');
-    process.stdout.on('data', chunk => {
-      res.push(chunk);
-    });
-    process.stdout.on('end', () => {
-      resolve(res.join(''));
-    });
-  });
 }
 
 function pReadFile(file) {
@@ -63,7 +50,7 @@ module.exports = function getGlobalPkg() {
         'package.json'
       )).version;
 
-	  return `${name}@${version}`
+      return `${name}@${version}`;
     });
 
     return yield NpmGlobalPkgs.concat(yarnGlobalPkgs);
