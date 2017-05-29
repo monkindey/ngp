@@ -1,5 +1,30 @@
 {
   "dependencies": {
     "co": "^4.6.0"
-  }
+  },
+  "name": "ngp",
+  "description": "lookup which package you global install",
+  "version": "0.2.0",
+  "main": "index.js",
+  "bin": {
+    "ngp": "bin/index.js"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/monkindey/pg.git"
+  },
+  "keywords": [
+    "package",
+    "global"
+  ],
+  "author": "monkindey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/monkindey/pg/issues"
+  },
+  "homepage": "https://github.com/monkindey/pg#readme"
 }

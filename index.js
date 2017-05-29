@@ -6,7 +6,7 @@ const os = require('os');
 const fs = require('fs');
 const path = require('path');
 const exec = require('child_process').exec;
-
+ 
 const co = require('co');
 
 function isWin() {
